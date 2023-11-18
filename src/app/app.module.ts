@@ -16,6 +16,7 @@ import { FutterComponent } from './components/futter/futter.component';
 import { EjemploComponent } from './pages/ejemplo/ejemplo.component';
 import { Error404Component } from './pages/error404/error404.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { Error404Component } from './pages/error404/error404.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
