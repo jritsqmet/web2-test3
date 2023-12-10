@@ -10,6 +10,7 @@ import { OfertasComponent } from './pages/ofertas/ofertas.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { TerminosComponent } from './pages/terminos/terminos.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,8 @@ const routes: Routes = [
   {path:"ofertas",component: OfertasComponent},
   {path:"productos",component: ProductosComponent},
   {path:"terminos",component: TerminosComponent},
+  {path:"login",component: LoginComponent},
+
   {path:"**",component: Error404Component},
 
 

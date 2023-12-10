@@ -15,6 +15,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FutterComponent } from './components/futter/futter.component';
 import { EjemploComponent } from './pages/ejemplo/ejemplo.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { Error404Component } from './pages/error404/error404.component';
     NavBarComponent,
     FutterComponent,
     EjemploComponent,
-    Error404Component
+    Error404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
