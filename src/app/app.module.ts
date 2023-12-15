@@ -16,6 +16,7 @@ import { FutterComponent } from './components/futter/futter.component';
 import { EjemploComponent } from './pages/ejemplo/ejemplo.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,6 +39,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
