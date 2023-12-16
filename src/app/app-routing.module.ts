@@ -11,6 +11,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { TerminosComponent } from './pages/terminos/terminos.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"productos",component: ProductosComponent},
   {path:"terminos",component: TerminosComponent},
   {path:"login",component: LoginComponent},
+  {path:'registro',component:RegistroComponent},
 
   {path:"**",component: Error404Component},
 

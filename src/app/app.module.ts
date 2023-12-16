@@ -17,6 +17,8 @@ import { EjemploComponent } from './pages/ejemplo/ejemplo.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 
 @NgModule({
@@ -34,12 +36,14 @@ import { HttpClientModule } from '@angular/common/http';
     FutterComponent,
     EjemploComponent,
     Error404Component,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule // Formularios resposivos
 
   ],
   providers: [],
