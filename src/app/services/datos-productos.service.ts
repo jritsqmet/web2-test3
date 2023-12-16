@@ -15,7 +15,10 @@ export class DatosProductosService {
     
     return this.http.get(this.API_PRODUCTOS);
   }
-  
+  getProductosById(id:number): Observable <any>{
+    const temp = `${this.API_PRODUCTOS}/${id}`
+    return this.http.get(temp);
+  }
   ///metodo POST
   postProductos(producto:any): Observable <any>{
     

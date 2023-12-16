@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { DatosProductosService } from 'src/app/services/datos-productos.service';
 
 @Component({
   selector: 'app-detalle',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./detalle.component.css']
 })
 export class DetalleComponent {
-
+  constructor(private rutaActiva: ActivatedRoute, private servicio: DatosProductosService) { }
+  producto: any;
+  ngOnInit() {
+    this.rutaActiva.params.subscribe( ruta =>{
+      console.log( ruta['id'])
+       const id= ruta['id']
+       this.producto = this.servicio.getProductosById(id)
+      
+    })  
+   
+  }
 }
