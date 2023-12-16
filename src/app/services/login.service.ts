@@ -21,4 +21,6 @@ export class LoginService {
     return this.Http.post(this.API_FIRE,usuario)
   }
 
+  putUsuario(){}  
+
 }

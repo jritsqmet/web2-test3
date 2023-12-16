@@ -19,6 +19,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
     EjemploComponent,
     Error404Component,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,

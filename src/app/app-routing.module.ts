@@ -12,20 +12,25 @@ import { TerminosComponent } from './pages/terminos/terminos.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { loginGuard } from './guards/login.guard';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
 
 const routes: Routes = [
 
   {path:"acercade",component: AcercadeComponent},
-  {path:"carrito",component: CarritoComponent},
+  {path:"carrito",component: CarritoComponent,canActivate:[loginGuard]},
   {path:"contacto",component: ContactoComponent},
-  {path:"detalles/:id",component: DetalleComponent},
+  {path:"detalles/:id",component: DetalleComponent,canActivate:[loginGuard]},
   {path:"ejemplo",component: EjemploComponent},
   {path:"",component: HomeComponent},
   {path:"ofertas",component: OfertasComponent},
-  {path:"productos",component: ProductosComponent},
+  {path:"productos",component: ProductosComponent,canActivate:[loginGuard]},
   {path:"terminos",component: TerminosComponent},
   {path:"login",component: LoginComponent},
   {path:'registro',component:RegistroComponent},
+  {path:"usuario",component:UsuarioComponent},
+
+  
 
   {path:"**",component: Error404Component},
 
