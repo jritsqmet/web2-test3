@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:"acercade",component: AcercadeComponent},
   {path:"carrito",component: CarritoComponent},
   {path:"contacto",component: ContactoComponent},
-  {path:"detalles",component: DetalleComponent},
+  {path:"detalles/:id",component: DetalleComponent},
   {path:"ejemplo",component: EjemploComponent},
   {path:"",component: HomeComponent},
   {path:"ofertas",component: OfertasComponent},
