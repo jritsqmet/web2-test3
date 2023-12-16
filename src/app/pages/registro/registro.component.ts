@@ -17,6 +17,7 @@ export class RegistroComponent {
   tipo:any;
 
   guardarUsuario(usuario:any){
+    usuario.value.tipo="user"
     console.log(usuario.value)
     this.servicio.postUsuarios(usuario.value).subscribe()
   }
