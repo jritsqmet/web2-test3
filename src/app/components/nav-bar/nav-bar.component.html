@@ -12,13 +12,15 @@
                 <li class="nav-item"><a class="nav-link" href="productos">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="ofertas">Ofertas</a></li>
             </ul>
+            <form class="d-flex">
+                <a *ngIf="acceso !== 'true'" href="login" class="btn btn-outline-dark" role="button" style="margin-right: 15px;">
+                    <i class="bi-cart-fill me-1"></i>Iniciar sesión
+                </a>
+                <a *ngIf="acceso === 'true'" href="#" class="btn btn-outline-dark" role="button" style="margin-right: 15px;" (click)="BotonSesion()">
+                    <i class="bi-cart-fill me-1"></i>Cerrar sesión
+                </a>
+            </form>
 
-<form class="d-flex">
-    <a href="login" class="btn btn-outline-dark" role="button" style="margin-right: 15px;">
-        <i class="bi-cart-fill me-1"></i>
-        Iniciar sesion
-    </a>
-</form>
             <form class="d-flex">
                 <a href="carrito" class="btn btn-outline-dark" role="button">
                     <i class="bi-cart-fill me-1"></i>

@@ -10,19 +10,19 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form (ngSubmit)="LoginUser(form)" #form="ngForm">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="Usuario">
+						<input type="text" class="form-control" placeholder="Usuario" name="usuario" [(ngModel)]=usuario>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="Clave">
+						<input type="password" class="form-control" placeholder="Clave" name="clave" [(ngModel)]=clave>
 					</div>
 					<div class="form-group">
 						<input type="submit" value="Iniciar sesion" class="btn float-right login_btn">
