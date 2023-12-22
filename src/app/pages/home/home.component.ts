@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DatosProductosService } from 'src/app/services/datos-productos.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { DatosProductosService } from 'src/app/services/datos-productos.service'
 })
 export class HomeComponent {
 
-  constructor(private servicio: DatosProductosService){}
+  constructor(private servicio: DatosProductosService, private router:Router){}
 
   dataProductos:any;
 
@@ -18,7 +19,10 @@ export class HomeComponent {
       console.log(data)
     })
   }
-  detalles(){
-    alert("ok")
+  detalles(String id){
+
+    this.router.('wsdas')
+
   }
+
 }
