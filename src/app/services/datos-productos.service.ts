@@ -8,35 +8,39 @@ import { Observable } from 'rxjs';
 export class DatosProductosService {
 
   constructor(private http: HttpClient) { }
-  private API_PRODUCTOS = 'http://localhost:3000/Productos';
+  private API_PRODUCTOS = 'http://localhost:9090/productos';
 
   ///metodo GET
   getProductos(): Observable <any>{
-    
-    return this.http.get(this.API_PRODUCTOS);
+    const temp = `${this.API_PRODUCTOS}/all`
+    return this.http.get(temp);
   }
   getProductosById(id:number): Observable <any>{
-    const temp = `${this.API_PRODUCTOS}/${id}`
+    const temp = `${this.API_PRODUCTOS}/byid/${id}`
+    return this.http.get(temp);
+  }
+  getProductosHome(): Observable <any>{
+    const temp = `${this.API_PRODUCTOS}/home`
     return this.http.get(temp);
   }
   ///metodo POST
   postProductos(producto:any): Observable <any>{
-    
-    return this.http.post(this.API_PRODUCTOS,producto);
+    const temp = `${this.API_PRODUCTOS}/add`
+    return this.http.post(temp,producto);
   }
 
   ////metodo PUT
   putProductos(producto:any, id:any): Observable <any>{
-    
-    const temp = `${this.API_PRODUCTOS}/${id}`
+
+    const temp = `${this.API_PRODUCTOS}/byid/${id}`
 
     return this.http.put(temp,producto);
   }
 
   ///metodo Eliminar
   deleteProductos(id:any): Observable <any>{
-    
-    const temp = `${this.API_PRODUCTOS}/${id}`
+
+    const temp = `${this.API_PRODUCTOS}/byid/${id}`
 
     return this.http.delete(temp);
   }

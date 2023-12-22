@@ -15,12 +15,12 @@ export class LoginService {
   getUsuarios():Observable <any>{
     return this.Http.get(this.API_FIRE)
   }
-  
+
   //POST
   postUsuarios(usuario:any):Observable <any>{
     return this.Http.post(this.API_FIRE,usuario)
   }
 
-  putUsuario(){}  
+  
 
 }

@@ -13,7 +13,10 @@ export class ProductosComponent {
 
   ngOnInit(){
     this.servicio.getProductos().subscribe(data =>{
+      console.log("test")
+      console.log(this.dataProductos);
       this.dataProductos = data;
+
     })
   }
   public sortProductsDesc(): void {

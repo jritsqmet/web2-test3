@@ -13,8 +13,12 @@ export class HomeComponent {
   dataProductos:any;
 
   ngOnInit(){
-    this.servicio.getProductos().subscribe(data =>{
-      this.dataProductos = data.filter((p: { descuento: number; }) => p.descuento === 0.00);
+    this.servicio.getProductosHome().subscribe(data =>{
+      this.dataProductos = data;
+      console.log(data)
     })
+  }
+  detalles(){
+    alert("ok")
   }
 }
