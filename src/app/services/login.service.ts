@@ -21,6 +21,9 @@ export class LoginService {
     return this.Http.post(this.API_FIRE,usuario)
   }
 
-  putUsuario(){}  
-
+  //Método para buscar usuario
+  buscarUsuario(usuario: any, clave:any): Observable<any> {
+    return this.Http.get(`${this.API_FIRE}?usuario=${usuario}&clave=${clave}`);
+  }
+  
 }
