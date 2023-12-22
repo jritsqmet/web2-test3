@@ -25,11 +25,9 @@ export class RegistroComponent {
     usuario.value.correo=""
     usuario.value.direccion=""
     usuario.value.cuidad=""
-
-
-
     console.log(usuario.value)
     this.servicio.postUsuarios(usuario.value).subscribe()
+    
 
     alert("Usuario Registado Con Exito")
     this.router.navigate(["login"])

@@ -20,18 +20,15 @@ const routes: Routes = [
   {path:"acercade",component: AcercadeComponent},
   {path:"carrito",component: CarritoComponent,canActivate:[loginGuard]},
   {path:"contacto",component: ContactoComponent},
-  {path:"detalles/:id",component: DetalleComponent,canActivate:[loginGuard]},
+  {path:"detalles/:id",component: DetalleComponent},
   {path:"ejemplo",component: EjemploComponent},
   {path:"",component: HomeComponent},
-  {path:"ofertas",component: OfertasComponent},
-  {path:"productos",component: ProductosComponent,canActivate:[loginGuard]},
+  {path:"ofertas",component: OfertasComponent,canActivate:[loginGuard]},
+  {path:"productos",component: ProductosComponent},
   {path:"terminos",component: TerminosComponent},
   {path:"login",component: LoginComponent},
   {path:'registro',component:RegistroComponent},
-  {path:"usuario",component:UsuarioComponent},
-
-  
-
+  {path:"usuario",component:UsuarioComponent,canActivate:[loginGuard]},
   {path:"**",component: Error404Component},
 
 

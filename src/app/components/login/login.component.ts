@@ -17,7 +17,6 @@ export class LoginComponent {
   clave:any;
   tipo:any;
   dataUsuarios:any;
-  //Metodo GET
 
   ngOnInit(){
     this.servicio.getUsuarios().subscribe(data=>{
@@ -35,13 +34,17 @@ export class LoginComponent {
     if (usuarioEncontrado) {
       this.tipo = usuarioEncontrado.tipo;
       console.log(this.tipo)
-      alert("Acceso concedido");
+      if(this.tipo=="user"){
+        localStorage.setItem('ACC','true')
       this.router.navigate(['']);
+      }else{
+        console.log('admin')
+        localStorage.setItem('ACC','true')
+        this.router.navigate(['']);
+      } 
     } else {
+      localStorage.setItem('ACC','false')
       alert("Error de acceso. Verifica tus credenciales.");
-      this.router.navigate(['login']);
     }
   }
-  
-  
 }

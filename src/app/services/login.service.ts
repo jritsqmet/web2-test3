@@ -15,15 +15,13 @@ export class LoginService {
   getUsuarios():Observable <any>{
     return this.Http.get(this.API_FIRE)
   }
+
   
   //POST
   postUsuarios(usuario:any):Observable <any>{
     return this.Http.post(this.API_FIRE,usuario)
   }
+  
 
-  //Método para buscar usuario
-  buscarUsuario(usuario: any, clave:any): Observable<any> {
-    return this.Http.get(`${this.API_FIRE}?usuario=${usuario}&clave=${clave}`);
-  }
   
 }
