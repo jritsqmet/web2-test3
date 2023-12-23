@@ -19,11 +19,10 @@ export class AdminComponent {
   }
 
 //Metodo POST
-agregarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
+agregarProducto(nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
  const precioNumerico = parseFloat(precio);
  const descuentoNumerico = parseFloat(descuento);
  const producto={
-  id:id,
   nombre:nombre,
   descripcion:descripcion,
   valor:precioNumerico,
