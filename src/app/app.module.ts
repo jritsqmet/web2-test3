@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { UsuarioComponent } from './pages/usuario/usuario.component';
     Error404Component,
     LoginComponent,
     RegistroComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

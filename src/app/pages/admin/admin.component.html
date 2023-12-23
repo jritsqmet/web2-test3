@@ -1,0 +1,75 @@
+<div class="container mt-3">
+    <h2>Productos</h2> 
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Buscar producto" #termino>
+      <button class="btn btn-outline-primary" type="button">Buscar</button>
+    </div>
+    <form action="/action_page.php">
+      <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="ID" #ID id="ide"/>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre del producto" #nombre id="nombreb"/>
+          </div> 
+          <div class="col">
+            <input type="number" class="form-control" placeholder="Precio" step="0.01" #precio id="precio" />
+          </div>
+          <div class="col">
+              <input type="number" class="form-control" placeholder="Descuento" step="0.01" #descuento id="descuento" />
+          </div>  
+        </div>
+      </form>
+      <form>
+          <div class="row" style="margin-top: 15px;">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
+              </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Link de imagen"
+                #img
+                id="img"
+              />
+            </div>
+          </div>
+        </form>
+      <br />
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" (click)="agregarProducto(ID.value,nombre.value,descripcion.value, precio.value,descuento.value,img.value)">Agregar</button>
+        <button type="button" class="btn btn-primary" (click)="editarProducto(ID.value,nombre.value,descripcion.value, precio.value,descuento.value,img.value)">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="borrarProducto(ID.value)">Eliminar</button>
+      </div>
+    </form>
+  </div>
+  <br />
+  
+  
+  <div class="container mt-3">
+      <h2>Lista de productos</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <!--th>Descripcion</th-->
+            <th>Precio</th>
+            <th>Descuento</th>
+            <th>Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of dataProductos">
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <!--td>{{ producto.descripcion }}</td-->
+            <td>{{ producto.valor }}</td>
+            <td>{{ producto.descuento }}</td>
+            <td><img [src]="producto.imagen" alt="Imagen del producto" width="50" height="50"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

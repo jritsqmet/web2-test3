@@ -12,17 +12,13 @@ export class HomeComponent {
   constructor(private servicio: DatosProductosService, private router:Router){}
 
   dataProductos:any;
-
+  id:any
   ngOnInit(){
     this.servicio.getProductosHome().subscribe(data =>{
       this.dataProductos = data;
       console.log(data)
     })
   }
-  detalles(String id){
 
-    this.router.('wsdas')
-
-  }
 
 }
