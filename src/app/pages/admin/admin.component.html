@@ -50,7 +50,7 @@
   
   <div class="container mt-3">
       <h2>Lista de productos</h2>
-      <table class="table">
+      <table class="table" id="miTabla">
         <thead>
           <tr>
             <th>ID</th>
@@ -59,17 +59,20 @@
             <th>Precio</th>
             <th>Descuento</th>
             <th>Imagen</th>
+            <th>Editar</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of dataProductos">
-            <td>{{ producto.id }}</td>
+          <tr *ngFor="let producto of dataProductos; let i = index">
+            <td id=>{{ producto.id }}</td>
             <td>{{ producto.nombre }}</td>
             <!--td>{{ producto.descripcion }}</td-->
             <td>{{ producto.valor }}</td>
             <td>{{ producto.descuento }}</td>
             <td><img [src]="producto.imagen" alt="Imagen del producto" width="50" height="50"></td>
+            <td><button type="button" (click)="editarFila(producto.id)" >Ediatr</button></td>
           </tr>
         </tbody>
       </table>
     </div>
+    

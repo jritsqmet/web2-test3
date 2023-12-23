@@ -52,8 +52,10 @@ borrarProducto(id:any){
  this.servicio.deleteProductos(id).subscribe()
 }
 
-
-
+editarFila(index: number) {
+  // Copiar la persona seleccionada para evitar modificar directamente el objeto en la lista
+  console.log(index);
+}
 
 
 }
