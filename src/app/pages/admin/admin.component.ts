@@ -21,13 +21,7 @@ export class AdminComponent {
 //Metodo POST
 agregarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
  const precioNumerico = parseFloat(precio);
- let descuentoNumerico;
- if(descuento==""){
-  descuento="0.0"
-  descuentoNumerico = parseFloat(descuento);
- }else{
-  descuentoNumerico = parseFloat(descuento);
- }
+ const descuentoNumerico = parseFloat(descuento);
  const producto={
   id:id,
   nombre:nombre,
@@ -42,21 +36,15 @@ agregarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,image
 //Metodo PUT
 editarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
   const precioNumerico = parseFloat(precio);
-  let descuentoNumerico;
-  if(descuento==""){
-   descuento="0.0"
-   descuentoNumerico = parseFloat(descuento);
-  }else{
-   descuentoNumerico = parseFloat(descuento);
-  }
+  const descuentoNumerico = parseFloat(descuento);
   const producto={
-    id:id,
-    nombre:nombre,
-    descripcion:descripcion,
-    valor:precioNumerico,
-    descuento:descuentoNumerico,
-    imagen:imagen
- }
+   id:id,
+   nombre:nombre,
+   descripcion:descripcion,
+   valor:precioNumerico,
+   descuento:descuentoNumerico,
+   imagen:imagen
+  }
  this.servicio.putProductos(producto,id).subscribe()
 }
 
