@@ -64,7 +64,7 @@ editarFila(producto:any) {
   this.nombreselect = producto.nombre
   this.descuentoselect = producto.descuento
   this.precioselect = producto.precio
-  this.
+
 }
 
 
