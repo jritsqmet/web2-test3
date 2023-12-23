@@ -35,8 +35,7 @@ idselect:any
 nombreselect:any
 precioselect:any
 descuentoselect:any
-                <input type="text" [(ngModel)]="descripselect" name = "descripselect" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
-desc
+
 //Metodo PUT
 editarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
   const precioNumerico = parseFloat(precio);
