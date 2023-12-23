@@ -8,23 +8,23 @@
       <form>
         <div class="row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="ID" #ID id="ide"/>
+            <input type="text" [(ngModel)]="idselect" name = "idselect" class="form-control" placeholder="ID" #ID id="ide"/>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre del producto" #nombre id="nombreb"/>
+            <input type="text" [(ngModel)]="nombreselect" name = "nombreselect" class="form-control" placeholder="Nombre del producto" #nombre id="nombreb"/>
           </div> 
           <div class="col">
-            <input type="number" class="form-control" placeholder="Precio" step="0.01" #precio id="precio" />
+            <input type="number" [(ngModel)]="precioselect" name = "precioselect"  class="form-control" placeholder="Precio" step="0.01" #precio id="precio" />
           </div>
           <div class="col">
-            <input type="number" class="form-control" placeholder="Descuento" step="0.01" #descuento id="descuento" value="0.0" />
+            <input type="number" [(ngModel)]="descuentoselect" name = "descuentoselect" class="form-control" placeholder="Descuento" step="0.01" #descuento id="descuento" value="0.0" />
           </div>  
         </div>
       </form>
       <form>
           <div class="row" style="margin-top: 15px;">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
+                <input type="text" [(ngModel)]="descripselect" name = "descripselect" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
               </div>
             <div class="col">
               <input
@@ -70,7 +70,7 @@
             <td>{{ producto.valor }}</td>
             <td>{{ producto.descuento }}</td>
             <td><img [src]="producto.imagen" alt="Imagen del producto" width="50" height="50"></td>
-            <td><button type="button" (click)="editarFila(producto.id)" >Ediatr</button></td>
+            <td><button type="button" (click)="editarFila(producto)" >Ediatr</button></td>
           </tr>
         </tbody>
       </table>

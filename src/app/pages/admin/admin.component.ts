@@ -31,7 +31,12 @@ agregarProducto(nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
  }
  this.servicio.postProductos(producto).subscribe()
 }
-
+idselect:any
+nombreselect:any
+precioselect:any
+descuentoselect:any
+                <input type="text" [(ngModel)]="descripselect" name = "descripselect" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
+desc
 //Metodo PUT
 editarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
   const precioNumerico = parseFloat(precio);
@@ -52,9 +57,15 @@ borrarProducto(id:any){
  this.servicio.deleteProductos(id).subscribe()
 }
 
-editarFila(index: number) {
+
+editarFila(producto:any) {
   // Copiar la persona seleccionada para evitar modificar directamente el objeto en la lista
-  console.log(index);
+  console.log(producto);
+  this.idselect = producto.id
+  this.nombreselect = producto.nombre
+  this.descuentoselect = producto.descuento
+  this.precioselect = producto.precio
+  this.
 }
 
 
