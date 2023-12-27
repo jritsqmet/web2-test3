@@ -30,12 +30,17 @@ agregarProducto(nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
   imagen:imagen
  }
  this.servicio.postProductos(producto).subscribe()
+ this.postProcess("Producto agregado")
+
+
+
 }
 idselect:any
 nombreselect:any
 precioselect:any
 descuentoselect:any
-
+descripselect:any
+imageselect:any
 //Metodo PUT
 editarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
   const precioNumerico = parseFloat(precio);
@@ -49,11 +54,13 @@ editarProducto(id:any,nombre:any,descripcion:any,precio:any,descuento:any,imagen
    imagen:imagen
   }
  this.servicio.putProductos(producto,id).subscribe()
+ this.postProcess("Producto Editado")
 }
 
 //Metodo Eliminar
 borrarProducto(id:any){
  this.servicio.deleteProductos(id).subscribe()
+ this.postProcess("Producto Eliminado")
 }
 
 
@@ -64,8 +71,28 @@ editarFila(producto:any) {
   this.nombreselect = producto.nombre
   this.descuentoselect = producto.descuento
   this.precioselect = producto.precio
+  this.descripselect = producto.descripcion
+  this.imageselect = producto.imagen
 
 }
+limpiarCampos(){
+  this.idselect =  ""
+  this.nombreselect=""
+  this.precioselect = ""
+  this.descuentoselect=""
+  this.descripselect=""
+  this.imageselect = ""
+}
+cargarProd(){
+  this.servicio.getProductos().subscribe(data=>{
+    this.dataProductos=data;
+  })
+}
+postProcess(mensaje:string){
 
+  this.limpiarCampos();
+  alert(mensaje);
+  this.cargarProd();
+}
 
 }

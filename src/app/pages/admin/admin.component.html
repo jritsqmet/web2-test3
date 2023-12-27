@@ -1,5 +1,5 @@
 <div class="container mt-3">
-    <h2>Productos</h2> 
+    <h2>Productos</h2>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Buscar producto" #termino>
       <button class="btn btn-outline-primary" type="button">Buscar</button>
@@ -12,13 +12,13 @@
           </div>
           <div class="col">
             <input type="text" [(ngModel)]="nombreselect" name = "nombreselect" class="form-control" placeholder="Nombre del producto" #nombre id="nombreb"/>
-          </div> 
+          </div>
           <div class="col">
             <input type="number" [(ngModel)]="precioselect" name = "precioselect"  class="form-control" placeholder="Precio" step="0.01" #precio id="precio" />
           </div>
           <div class="col">
-            <input type="number" [(ngModel)]="descuentoselect" name = "descuentoselect" class="form-control" placeholder="Descuento" step="0.01" #descuento id="descuento" value="0.0" />
-          </div>  
+            <input type="number" [(ngModel)]="descuentoselect" name = "descuentoselect" class="form-control" placeholder="Descuento" step="0.01" #descuento id="descuento"     />
+          </div>
         </div>
       </form>
       <form>
@@ -27,13 +27,7 @@
                 <input type="text" [(ngModel)]="descripselect" name = "descripselect" class="form-control" placeholder="Descripcion" #descripcion id="descripcion" />
               </div>
             <div class="col">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Link de imagen"
-                #img
-                id="img"
-              />
+              <input type="text" class="form-control" placeholder="Link de imagen" #img id="img" [(ngModel)]="imageselect"  name="imageselect"     />
             </div>
           </div>
         </form>
@@ -46,8 +40,8 @@
     </form>
   </div>
   <br />
-  
-  
+
+
   <div class="container mt-3">
       <h2>Lista de productos</h2>
       <table class="table" id="miTabla">
@@ -75,4 +69,3 @@
         </tbody>
       </table>
     </div>
-    
