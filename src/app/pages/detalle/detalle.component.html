@@ -5,12 +5,12 @@
             <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://i5.walmartimages.com/seo/God-of-War-Ragnarok-PlayStation-4_d180351f-bb93-4cc8-a9ac-e06a8b67ed3c.84e7a997d79f6c34ce9ba2d97e4c665f.jpeg" alt="..." /></div>
             <div class="col-md-6">
                 <div class="small mb-1">SKU: 000000</div>
-                <h1 class="display-5 fw-bolder">Nombre del producto</h1>
+                <h1 class="display-5 fw-bolder">{{producto.nombre}}</h1>
                 <div class="fs-5 mb-5">
                     <span class="text-decoration-line-through">$00.00</span>
-                    <span>$00.00</span>
+                    <span> ${{producto.precio}}</span>
                 </div>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                <p class="lead">{{producto.descripcion}}</p>
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                     <button class="btn btn-outline-dark flex-shrink-0" type="button">

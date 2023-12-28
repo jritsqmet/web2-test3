@@ -10,13 +10,23 @@ import { DatosProductosService } from 'src/app/services/datos-productos.service'
 export class DetalleComponent {
   constructor(private rutaActiva: ActivatedRoute, private servicio: DatosProductosService) { }
   producto: any;
+
   ngOnInit() {
     this.rutaActiva.params.subscribe( ruta =>{
       console.log( ruta['id'])
        const id= ruta['id']
-       this.producto = this.servicio.getProductosById(id)
-      
-    })  
-   
+       this.producto = this.servicio.getProductosById(id).subscribe(data =>{
+        this.producto = data;
+        console.log( ruta['id'])
+        console.log(data)
+      })
+      console.log( ruta['id'])
+
+       console.log(this.producto)
+       console.log( ruta['id'])
+       console.log(this.producto.get())
+
+    })
+
   }
 }

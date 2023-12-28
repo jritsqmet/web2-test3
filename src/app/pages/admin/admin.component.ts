@@ -20,21 +20,18 @@ export class AdminComponent {
 
 //Metodo POST
 agregarProducto(nombre:any,descripcion:any,precio:any,descuento:any,imagen:any){
- const precioNumerico = parseFloat(precio);
- const descuentoNumerico = parseFloat(descuento);
- const producto={
-  nombre:nombre,
-  descripcion:descripcion,
-  valor:precioNumerico,
-  descuento:descuentoNumerico,
-  imagen:imagen
- }
- this.servicio.postProductos(producto).subscribe()
- this.postProcess("Producto agregado")
-
-
-
-}
+  const precioNumerico = parseFloat(precio);
+  const descuentoNumerico = parseFloat(descuento);
+  const producto={
+    nombre:nombre,
+    descripcion:descripcion,
+    valor:precioNumerico,
+    descuento:descuentoNumerico,
+    imagen:imagen
+    }
+  this.servicio.postProductos(producto).subscribe()
+  this.postProcess("Producto agregado")
+  }
 idselect:any
 nombreselect:any
 precioselect:any
