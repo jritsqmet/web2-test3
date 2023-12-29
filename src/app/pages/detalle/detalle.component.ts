@@ -25,7 +25,7 @@ export class DetalleComponent {
        console.log(this.producto)
        console.log( ruta['id'])
        console.log(this.producto.get())
-
+       
     })
 
   }

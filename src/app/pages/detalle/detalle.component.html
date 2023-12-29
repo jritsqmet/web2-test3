@@ -2,13 +2,14 @@
   <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://i5.walmartimages.com/seo/God-of-War-Ragnarok-PlayStation-4_d180351f-bb93-4cc8-a9ac-e06a8b67ed3c.84e7a997d79f6c34ce9ba2d97e4c665f.jpeg" alt="..." /></div>
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{producto.imagen}}" alt="..." /></div>
             <div class="col-md-6">
-                <div class="small mb-1">SKU: 000000</div>
                 <h1 class="display-5 fw-bolder">{{producto.nombre}}</h1>
                 <div class="fs-5 mb-5">
-                    <span class="text-decoration-line-through">$00.00</span>
-                    <span> ${{producto.precio}}</span>
+                    <!-- Product price-->
+                    <span class="text-muted text-decoration-line-through" *ngIf="producto.descuento > 0.00">${{producto.valor}}</span>
+                    ${{(producto.valor -(producto.valor * producto.descuento))| number : '1.2-2'}}
+        
                 </div>
                 <p class="lead">{{producto.descripcion}}</p>
                 <div class="d-flex">
