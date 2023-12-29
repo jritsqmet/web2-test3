@@ -15,6 +15,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { loginGuard } from './guards/login.guard';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { adminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
 
@@ -30,7 +31,7 @@ const routes: Routes = [
   {path:"login",component: LoginComponent},
   {path:'registro',component:RegistroComponent},
   {path:"usuario",component:UsuarioComponent,canActivate:[loginGuard]},
-  {path:'admin',component:AdminComponent},
+  {path:'admin',component:AdminComponent,canActivate:[adminGuard]},
   {path:"**",component: Error404Component},
 
 

@@ -67,7 +67,7 @@ editarFila(producto:any) {
   this.idselect = producto.id
   this.nombreselect = producto.nombre
   this.descuentoselect = producto.descuento
-  this.precioselect = producto.precio
+  this.precioselect = producto.valor
   this.descripselect = producto.descripcion
   this.imageselect = producto.imagen
 
@@ -85,8 +85,8 @@ cargarProd(){
     this.dataProductos=data;
   })
 }
-postProcess(mensaje:string){
 
+postProcess(mensaje:string){
   this.limpiarCampos();
   alert(mensaje);
   this.cargarProd();

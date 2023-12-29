@@ -7,21 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  acceso: string | null = null; 
-
+  accesoUser: string | null = null; 
+  accesoAdmin: string | null = null; 
+  acceso:any;
   ngOnInit() {
-    this.acceso = localStorage.getItem('ACC');
-    console.log(this.acceso);
+    this.accesoUser = localStorage.getItem('ACC');
+    this.accesoAdmin = localStorage.getItem('ACCADMIN');
+    console.log('Valor de AccesoUser:', this.accesoUser);
+    console.log('Valor de accesoAdmin:', this.accesoAdmin);
   }
 
   BotonSesion() {
-    if (this.acceso === 'true') {
-      this.acceso = 'false';
+    if (this.accesoUser === 'true' || this.accesoAdmin === 'true') {
       localStorage.setItem('ACC', 'false');
+      localStorage.setItem('ACCADMIN', 'false');
+      this.accesoUser = 'false';
+      this.accesoAdmin = 'false';
     } else {
-      this.acceso = 'true';
-      localStorage.setItem('ACC', 'true');
+      this.accesoUser = 'true';
     }
-    location.reload();
-  }
+  }  
 }

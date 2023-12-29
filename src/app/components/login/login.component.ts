@@ -37,9 +37,9 @@ export class LoginComponent {
       if(this.tipo=="user"){
         localStorage.setItem('ACC','true')
       this.router.navigate(['']);
-      }else{
+      }else if(this.tipo=="admin"){
         console.log('admin')
-        localStorage.setItem('ACC','true')
+        localStorage.setItem('ACCADMIN','true')
         this.router.navigate(['']);
       } 
     } else {

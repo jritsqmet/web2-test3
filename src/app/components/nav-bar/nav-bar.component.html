@@ -10,19 +10,19 @@
                 <li class="nav-item"><a class="nav-link" href="terminos">Terminos</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacto">Contactanos</a></li>
                 <li class="nav-item"><a class="nav-link" href="productos">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="ofertas">Ofertas</a></li>
-                <li class="nav-item"><a class="nav-link" href="admin">Gestionar Productos</a></li>
+                <li class="nav-item" *ngIf="accesoUser=== 'true'"><a class="nav-link" href="ofertas">Ofertas</a></li>
+                <li class="nav-item" *ngIf="accesoAdmin=== 'true'"><a class="nav-link" href="admin">Gestionar Productos</a></li>
             </ul>
             <form class="d-flex">
-                <a *ngIf="acceso !== 'true'" href="login" class="btn btn-outline-dark" role="button" style="margin-right: 15px;">
+                <a *ngIf="!(accesoUser === 'true' || accesoAdmin === 'true')" href="login" class="btn btn-outline-dark" role="button" style="margin-right: 15px;">
                     <i class="bi-cart-fill me-1"></i>Iniciar sesión
-                </a>
-                <a *ngIf="acceso === 'true'" href="#" class="btn btn-outline-dark" role="button" style="margin-right: 15px;" (click)="BotonSesion()">
+                  </a>
+                  <a *ngIf="accesoUser === 'true' || accesoAdmin === 'true'" href="#" class="btn btn-outline-dark" role="button" style="margin-right: 15px;" (click)="BotonSesion()">
                     <i class="bi-cart-fill me-1"></i>Cerrar sesión
-                </a>
+                  </a>                  
             </form>
 
-            <form class="d-flex">
+            <form class="d-flex" *ngIf="accesoUser=== 'true'">
                 <a href="carrito" class="btn btn-outline-dark" role="button">
                     <i class="bi-cart-fill me-1"></i>
                     Carrito
