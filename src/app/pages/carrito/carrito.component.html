@@ -13,14 +13,14 @@
               <input type="text" id="adr" name="address" placeholder="Calle 123">
               <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
               <input type="text" id="city" name="city" placeholder="Ciudad">
-  
-             
-              
+
+
+
             </div>
-  
+
             <div class="col-50">
               <h3>Pago</h3>
-              <label for="fname">Tarjetas Aceptadas</label>              
+              <label for="fname">Tarjetas Aceptadas</label>
               <div class="icon-container">
                 <i class="fa fa-cc-visa" style="color:navy;">Visa  </i>
                 <i class="fa fa-cc-amex" style="color:blue;"> AMEX</i>
@@ -33,7 +33,7 @@
               <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
               <label for="expmonth">Mes de Vencimiento</label>
               <input type="text" id="expmonth" name="expmonth" placeholder="Septiembre">
-  
+
               <div class="row">
                 <div class="col-50">
                   <label for="expyear">Año de Vencimiento</label>
@@ -45,7 +45,7 @@
                 </div>
               </div>
             </div>
-  
+
           </div>
           <label>
             <input type="checkbox" checked="checked" name="sameadr"> La dirección de envío es la misma que la de facturación
@@ -54,7 +54,7 @@
         </form>
       </div>
     </div>
-  
+
     <div class="col-25">
       <div class="container">
         <h4>Carrito
@@ -69,6 +69,9 @@
         <p><a href="#">Producto 4</a> <span class="price">$2</span></p>
         <hr>
         <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+        <button class="btn btn-outline-dark" (click)="limpiar()">Limpiar</button>
+        <button class="btn btn-outline-dark" (click)="limpiar()">Pagar</button>
+      
       </div>
     </div>
 </div>

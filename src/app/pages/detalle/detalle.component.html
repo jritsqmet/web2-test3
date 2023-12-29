@@ -9,16 +9,18 @@
                     <!-- Product price-->
                     <span class="text-muted text-decoration-line-through" *ngIf="producto.descuento > 0.00">${{producto.valor}}</span>
                     ${{(producto.valor -(producto.valor * producto.descuento))| number : '1.2-2'}}
-        
+
                 </div>
                 <p class="lead">{{producto.descripcion}}</p>
-                <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                <form (ngSubmit)="addtoCar(form)" #form="ngForm">
+                  <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" name="cantidadp" [(ngModel)]=cantidadp />
+                    <button  class="btn btn-outline-dark flex-shrink-0" type="submit">
                         <i class="bi-cart-fill me-1"></i>
                         Añadir al carrito
                     </button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
