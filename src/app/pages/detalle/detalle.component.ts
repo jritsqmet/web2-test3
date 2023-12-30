@@ -33,10 +33,10 @@ export class DetalleComponent {
     let carData = localStorage.getItem("CAR")
     if(carData ===  null || carData.length===0)
     {
-      carData = this.producto.nombre + ":"+this.cantidadp;
+      carData = this.producto.nombre + ":"+this.producto.valor;
     }
     else{
-      carData =carData +"|"+ this.producto.nombre + ":"+this.cantidadp;
+      carData =carData +"|"+ this.producto.nombre + ":"+this.producto.valor;
     }
     console.log("carData")
     console.log(carData)

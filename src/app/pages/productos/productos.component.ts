@@ -27,8 +27,15 @@ export class ProductosComponent {
     this.dataProductos = this.dataProductos.sort((a: { valor: number; }, b: { valor: number; }) => b.valor - a.valor);
   }
   filterBy(nameInput: HTMLInputElement) {
-    if (nameInput.value) {
+    if (nameInput.value.length > 0) {
       this.dataProductos = this.dataProductos.filter((p: { nombre: string; }) => p.nombre.toLowerCase().includes(nameInput.value.toLowerCase()))
+    }
+    else{
+      this.servicio.getProductos().subscribe(data =>{
+
+        this.dataProductos = data;
+  
+      })
     }
   }
 }
