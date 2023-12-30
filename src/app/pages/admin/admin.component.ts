@@ -91,5 +91,17 @@ postProcess(mensaje:string){
   alert(mensaje);
   this.cargarProd();
 }
+filterBy(nameInput: HTMLInputElement) {
+  if (nameInput.value.length > 0) {
+    this.dataProductos = this.dataProductos.filter((p: { nombre: string; }) => p.nombre.toLowerCase().includes(nameInput.value.toLowerCase()))
+  }
+  else{
+    this.servicio.getProductos().subscribe(data =>{
+
+      this.dataProductos = data;
+
+    })
+  }
+}
 
 }

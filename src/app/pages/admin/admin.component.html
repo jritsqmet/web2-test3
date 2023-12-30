@@ -2,7 +2,7 @@
     <h2>Productos</h2>
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Buscar producto" #termino>
-      <button class="btn btn-outline-primary" type="button">Buscar</button>
+      <button class="btn btn-outline-primary" type="button" (click)="filterBy(termino)">Buscar</button>
     </div>
     <form action="/action_page.php">
       <form>
