@@ -8,8 +8,9 @@ import { Productoitem } from '../../productoItem';
 })
 export class CarritoComponent {
     productos: any
-
+    continuar:boolean | undefined
   cargarCarrito(){
+    
    console.log("inicio")
     let listaObjetos = [];
 
@@ -43,6 +44,7 @@ export class CarritoComponent {
     console.log("limpiar")
   }
   ngOnInit(){
+    this.continuar = false
     this.cargarCarrito();
     console.log(this.productos)
   }
@@ -57,6 +59,9 @@ export class CarritoComponent {
       total = total + parseFloat(par.valor);
     }
     return total;
+  }
+  setContinuar(){
+    this.continuar = true;
   }
 
 }

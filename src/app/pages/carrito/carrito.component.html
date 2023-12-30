@@ -50,7 +50,7 @@
           <label>
             <input type="checkbox" checked="checked" name="sameadr"> La dirección de envío es la misma que la de facturación
           </label>
-          <input type="submit" value="Continuar con la compra" class="btn">
+          <button  class="btn" (click)="setContinuar()" >Continuar con la compra</button>
         </form>
       </div>
     </div>
@@ -67,7 +67,7 @@
         <hr>
         <p>Total <span class="price" style="color:black"><b>${{getTotal()}}</b></span></p>
         <button class="btn btn-outline-dark" (click)="limpiar()">Limpiar</button>
-        <button class="btn btn-outline-dark" (click)="limpiar()">Pagar</button>
+        <button *ngIf="continuar" class="btn btn-outline-dark" (click)="limpiar()">Pagar</button>
       
       </div>
     </div>

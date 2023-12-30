@@ -41,5 +41,6 @@ export class DetalleComponent {
     console.log("carData")
     console.log(carData)
     localStorage.setItem("CAR",carData)
+    alert("Producto agregado")
   }
 }
